@@ -8,6 +8,5 @@ var (
 )
 
 func main() {
-	aa := "asdffdsf"
 	println(e)
 }
