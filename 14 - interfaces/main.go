@@ -20,6 +20,14 @@ func (c *Client) Deactivate() {
 	c.Ativo = false
 }
 
+type Pessoa interface {
+	Deactivate()
+}
+
+func Deactivation(pessoa Pessoa) {
+	pessoa.Deactivate()
+}
+
 func main() {
 	ali := Client{
 		Nome: "Alisson",
@@ -28,7 +36,7 @@ func main() {
 	}
 
 	ali.Address.Cidade = "Curitiba"
-	ali.Deactivate()
+	Deactivation(&ali)
 
 	fmt.Println(ali)
 }
